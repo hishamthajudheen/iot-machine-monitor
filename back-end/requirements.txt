@@ -3,3 +3,5 @@ uvicorn ==  0.18.3
 python-multipart
 python-jose[cryptography]
 passlib[bcrpt]
+google-auth google-auth-oauthlib
+sqlalchemy
