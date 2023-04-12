@@ -1,10 +1,9 @@
 from sqlalchemy import Column, Integer, String
 from database import Base
 
-class Books(Base):
-    __tablename__ = "books"
+class IotMonitor(Base):
+    __tablename__ = "usercredentials"
     id = Column(Integer,primary_key=True, index=True)
-    title = Column(String)
-    author = Column(String)
-    description = Column(String)
-    rating = Column(Integer)
+    user_name = Column(String)
+    user_email = Column(String)
+    user_password = Column(String)
