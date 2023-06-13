@@ -1,7 +1,9 @@
-from fastapi import FastAPI, Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi import FastAPI
+from fastapi.responses import FileResponse
 
 app = FastAPI()
-@app.get("/test/")
-async def test():
-    return {"hello":"world"}
+
+@app.get("/")
+async def get_home():
+    html_file_path = "static/sample.html"
+    return FileResponse(html_file_path)
