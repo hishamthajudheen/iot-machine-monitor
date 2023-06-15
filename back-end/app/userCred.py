@@ -51,7 +51,7 @@ def update_user(user_id:int, user: IotMonitor, db:Session = Depends(get_db)):
     return user
 
 @app.delete("/{user_id}")
-def delete_user(user_id: int,user: IotMonitor, db: Session = Depends(get_db)):
+def delete_user(user_id: int, user: IotMonitor, db: Session = Depends(get_db)):
    IotMonitor_model = db.query(models.IotMonitor).filter(models.IotMonitor.id == user_id).first()
    if IotMonitor_model is None:
         raise HTTPException(
