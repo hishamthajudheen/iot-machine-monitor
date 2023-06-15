@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import machines
+from .models import Cpu
 
 # Register your models here.
-admin.site.register(machines)
+admin.site.register(Cpu)
