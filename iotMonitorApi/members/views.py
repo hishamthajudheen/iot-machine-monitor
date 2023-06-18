@@ -5,16 +5,16 @@ from django.contrib import messages
 def login_user(request):
     if request.method =="POST":
         username = request.POST["username"]
-        email = request.POST["email"]
+        #email = request.POST["email"]
         password = request.POST["password"]
-        user = authenticate(request, username=username, email=email, password=password)
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             messages.success(request,("Logged in!"))
             return redirect('login')
         else:
-            messages.info(request, "Try again!")
-            return redirect('members')
+            messages.success(request, "Invalid info")
+            return redirect('login')
             
     else:    
         return render(request, 'authenticate/login.html', {})
