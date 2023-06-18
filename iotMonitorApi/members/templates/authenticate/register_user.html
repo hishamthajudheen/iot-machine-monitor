@@ -1,0 +1,14 @@
+<title>Sign Up</title>
+<h2>User Registration</h2>
+{% if form.errors %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        Error with form!
+    </div>
+{% endif %}
+<br/>
+<form action="{% url 'register_user' %}" method=POST>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br/>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
