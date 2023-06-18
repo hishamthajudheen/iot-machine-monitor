@@ -1,0 +1,32 @@
+<form action="" method=POST>
+   {% csrf_token %}
+   <div class="container">
+      {% if messages %}
+         <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+         </ul>
+      {% endif %}
+   </div>
+   <div>
+      {% if user.is_authenticated %}
+         <a href="{% url 'logout' %}">Log Out</a>
+      {% else %}
+         <a href="{% url 'login' %}">Login</a>
+      {% endif %}
+   </div>
+   <div class="form-group">
+      <label for="username">Enter Username</label>
+      <input type="text" class="form-control" name="username" placeholder="Enter username">
+   </div>
+   <div class="form-group">
+     <label for="inputEmail">Email address</label>
+     <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+   </div>
+   <div class="form-group">
+     <label for="exampleInputPassword1">Password</label>
+     <input type="password" class="form-control" name="password" placeholder="Password">
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
