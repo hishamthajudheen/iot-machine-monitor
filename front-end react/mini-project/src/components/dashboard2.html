@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="./gauge.min.js"></script>
+  </head>
+
+  <body>
+
+   </div>
+  <div class="bg">
+    <div class="machine1">
+      <div class="heading">
+      <h1>Machine-1</h1>
+      </div>
+    <table>
+    <tr>
+      <td>
+    <div class="switch1">
+    <label class="switch">
+      <input class="chk" type="checkbox">
+      <span class="slider"></span>
+    </label>
+    <div class="title1">
+     <p class="title">Switch 1</p>
+    </div>
+    </div>
+      </td>
+      <td>
+    <div class="switch2">
+      <label class="switch">
+        <input class="chk" type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <div class="title2">
+       <p class="title">Switch 2</p>
+      </div>
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <div id="gauge-demo" class="gauge-container"></div>
+      </td>
+      <td>
+    <div id="chartContainer">
+
+    </div>
+    </td>
+    </tr>
+    </table>
+  </div>
+</div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script>
+      
+    window.onload = function () {
+
+var dps = []; // dataPoints
+var chart = new CanvasJS.Chart("chartContainer", {
+	backgroundColor: 'black',
+  theme: "light2", 
+  title :{
+		text: "Dynamic Data"
+	},
+	data: [{
+		type: "line",
+		dataPoints: dps
+	}]
+});
+
+var xVal = 0;
+var yVal = 100; 
+var updateInterval = 1000;
+var dataLength = 20; // number of dataPoints visible at any point
+
+var updateChart = function (count) {
+
+	count = count || 1;
+
+	for (var j = 0; j < count; j++) {
+		yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+		dps.push({
+			x: xVal,
+			y: yVal
+		});
+		xVal++;
+	}
+
+	if (dps.length > dataLength) {
+		dps.shift();
+	}
+
+	chart.render();
+};
+
+updateChart(dataLength);
+setInterval(function(){updateChart()}, updateInterval);
+
+}
+var value = 0; // initialize the value to 0
+
+// initialize the gauge chart
+var myGauge = Gauge(document.getElementById("gauge-demo"), {
+  dialRadius: 30,
+  dialStartAngle: 180,
+  dialEndAngle: 0,
+  value: value,
+  max: 100,
+  min: 0,
+  valueDialClass: "value",
+  valueClass: "value-text",
+  dialClass: "dial",
+  gaugeClass: "gauge",
+  showValue: true,
+  gaugeColor: null,
+  label: function(val) {return Math.round(val);}
+});
+
+// update the value of the gauge chart every 200 milliseconds
+setInterval(function() {
+  // generate a random value between 0 and 100
+  value = Math.floor(Math.random() * 101);
+  
+  // update the gauge chart with the new value
+  myGauge.setValue(value);
+}, 600);
+
+ // returns a string label that will be rendered in the center
+;
+    </script>
+  
+  </body>
+</html>

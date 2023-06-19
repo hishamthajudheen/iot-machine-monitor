@@ -1,0 +1,333 @@
+/* The switch - the box around the slider */
+@font-face {
+  font-family: Intel;
+  src: url(IntelOneDisplayMedium.ttf);
+}
+
+@font-face {
+  font-family: myfont;
+  src: url(IntelOneDisplayRegular.ttf);
+}
+
+i
+{
+  color: azure;
+}
+
+body
+{
+  background-color: goldenrod;
+}
+a:link {
+  text-decoration: none;
+  color:white;
+  font-size: 18px;
+  font-family: Intel;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}
+
+.header
+{
+  margin-top: 1px;
+  width:101%;
+  height:60px;
+  margin-left: -9px;
+  background-color: black;
+}
+
+#logo
+{
+  width:200px;
+  height: 59px;
+  margin-top: 1px;
+  margin-left: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#logo img
+{
+  width:65px;
+  height: fit-content;
+}
+
+#dev
+{
+  width: 99px;
+  height: 38px;
+  float: left;
+  padding-left: 6px;
+  padding-top: 6px;
+  margin-top: 6px;
+  margin-left: 34px;
+}
+
+#dev:hover a{
+  color: mediumpurple;
+  text-decoration-color: #C8A2C8;
+}
+
+#dash
+{
+  width: 99px;
+  height: 38px;
+  float: left;
+  padding-left: 6px;
+  padding-top: 6px;
+  margin-top: 6px;
+  margin-left: 12px;
+  color: mediumpurple;
+}
+
+#dash a{
+  color: mediumpurple;
+  text-decoration-color: #C8A2C8;
+}
+
+#about
+{
+  width: 99px;
+  height: 38px;
+  float: left;
+  padding-left: 26px;
+  padding-top: 6px;
+  margin-top: 6px;
+  margin-left: 16px;
+}
+
+#about:hover a{
+  color: mediumpurple;
+  text-decoration-color: #C8A2C8;
+}
+
+#memb
+{
+  width: 99px;
+  height: 38px;
+  float: left;
+  padding-left: 6px;
+  padding-top: 6px;
+  margin-top: 7px;
+  margin-left: 16px;
+}
+
+#memb:hover a{
+  color: mediumpurple;
+  text-decoration-color: #C8A2C8;
+}
+
+
+#login
+{
+  width:99px;
+  height:38px;
+  padding-top: 6px;
+  margin-top: 6px;
+  margin-left: 693px;
+}
+
+#login:hover a{
+  color: mediumpurple;
+  text-decoration-color: #C8A2C8;
+}
+
+
+.title1 
+{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+  color: aliceblue;
+  margin-top: -4px;
+  margin-left: 27px;
+
+}
+
+.switch1 
+{
+  margin-top: 75px;
+  margin-left: 114px;
+
+}
+.switch {
+    font-size: 17px;
+    margin-left: 20px;
+    margin-top: 75px;
+    position: relative;
+    display: inline-block;
+    width: 4em;
+    height: 2em;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch .chk {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "OFF";
+    display: grid;
+    place-content: center;
+    height: 1.6em;
+    width: 3.6em;
+    border-radius: 20px;
+    left: 0.17em;
+    bottom: 0.22em;
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 3.7px black;
+    transition: .4s ease-in-out;
+  }
+  
+  .chk:checked + .slider:before {
+    content: "ON";
+    background-color: limegreen;
+    box-shadow: inset 0px 0px 5px black;
+  }
+
+  /* The switch - the box around the slider */
+.title2 
+{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+  color: aliceblue;
+  margin-top: -4px;
+  margin-left: 29px;
+
+}
+.switch2 
+{
+  margin-top: 75px;
+  margin-left: 400px;
+  float: right;
+  width:50%;
+}
+.switch {
+    font-size: 17px;
+    margin-left: 20px;
+    margin-top: 75px;
+    position: relative;
+    display: inline-block;
+    width: 4em;
+    height: 2em;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch .chk {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "OFF";
+    display: grid;
+    place-content: center;
+    height: 1.6em;
+    width: 3.6em;
+    border-radius: 20px;
+    left: 0.17em;
+    bottom: 0.22em;
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 3.7px black;
+    transition: .4s ease-in-out;
+  }
+  
+  .chk:checked + .slider:before {
+    content: "ON";
+    background-color: limegreen;
+    box-shadow: inset 0px 0px 5px black;
+  }
+  .gauge-container
+{
+  width: 156%;
+  height: 100px;
+  margin-bottom: 300px;
+  margin-left: 3px;
+  float: right;
+  float: revert;
+  
+}
+
+
+.gauge-container > .gauge > .dial {
+    stroke: #334455;
+    stroke-width: 2;
+  }
+  .gauge-container > .gauge > .value {
+    stroke: rgb(255, 0, 0);
+    stroke-width: 2;
+  }
+  .gauge-container > .gauge > .value-text {
+    fill: rgb(47, 227, 255);
+    font-family: sans, 'sans-serif';
+    font-weight: bold;
+    font-size: 0.6em;
+  }
+
+#chartContainer
+{
+  margin-left: 136px;
+  margin-top: -100px;
+  height: 300px;
+  width: 70%;
+}
+
+.bg
+{
+    background-color: rgb(0, 0, 0);
+    height: 680px;
+    margin-top:0;
+    margin-left:0;
+}
+
+.machine1
+{
+  background-color: rgb(35, 35, 37);
+  width: fit-content;
+  padding-top: 4px;
+  padding-left: 3px;
+}
+
+.machine1 h1
+{
+  color: aliceblue;
+  align-items: center;
+  font-family: myfont;
+}
+
+.heading
+{
+  padding-left: 5px;
+}

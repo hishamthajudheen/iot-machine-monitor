@@ -15,12 +15,12 @@ const Navbar = () =>{
           <a href='/'>Home</a>
         </li>
         <li className='px-6 py-2.5 transition ease-in-out delay-150 hover:-scale-y+1 hover:scale-110 hover:text-purple-500  hover:decoration-[#C8A2C8] duration-300 rounded ml-12'>
-        <Link to="about" smooth={true} duration={500}>
+        <Link to="About" smooth={true} duration={500}>
           About Us
         </Link>
         </li>
         <li className='px-6 py-2.5 transition ease-in-out delay-150 hover:-scale-y+1 hover:scale-110 hover:text-purple-500  hover:decoration-[#C8A2C8] duration-300 rounded ml-12'>
-        <Link to="contact" smooth={true} duration={500}>
+        <Link to="Contact" smooth={true} duration={500}>
           Contact Us
         </Link>
         </li>
