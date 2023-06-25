@@ -19,8 +19,8 @@ const Home = () =>{
                     <h1 className="text-white font-semibold text-5xl ">About Us</h1>
                  </div>
                  <hr className="w-[200px] mt-[40px] ml-[660px] border-4 border-purple-500 cursor-pointer hover:border-purple-800 duration-500"></hr>
-                 <div className="mt-[90px] w-[600px] ml-[475px]">
-                 <p className="text-white text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dignissimos est culpa voluptas, nulla numquam et molestiae natus, tempore doloribus sunt cum. Deleniti accusamus earum, aperiam sequi minus tenetur cum!Vestibulum tincidunt metus ut ullamcorper pharetra. Nam vehicula bibendum tortor, sit amet pellentesque leo viverra maximus. Etiam semper enim id eros ultricies pretium. Quisque porta magna libero, at sodales metus malesuada vel. Suspendisse in velit sagittis, blandit nunc vitae, placerat felis. In nulla metus, congue sed cursus in, porta a tortor. Suspendisse aliquam blandit metus, a bibendum purus pellentesque id. Maecenas vulputate mollis tellus, sed rhoncus ipsum malesuada non. Curabitur eget orci at enim ullamcorper euismod. Pellentesque porta a mauris nec dapibus. Proin ultricies sed est quis maximus. Integer massa odio, faucibus bibendum nisl vel, malesuada vehicula arcu. Phasellus elit nulla, vestibulum vitae scelerisque eu, scelerisque in ante. In ut sem varius mauris dignissim vestibulum et et erat. Nunc maximus pharetra elit eu lacinia. Mauris in porttitor tellus, tempor pulvinar nibh.</p>
+                 <div className="mt-[60px] w-[600px] ml-[475px]">
+                 <p className="text-white text-center">IoT Machine Monitoring Systems Ltd. is a leading provider of advanced machine monitoring solutions for industrial and manufacturing environments. Our innovative solutions harness the power of IoT technology to collect, analyze, and visualize real-time data from machines, enabling businesses to optimize performance, increase productivity, and reduce downtime. With our customizable dashboards, intelligent analytics, and commitment to customer satisfaction, we empower our clients to make informed decisions and achieve operational excellence.</p>
                  </div>
             </div>
             
@@ -45,20 +45,20 @@ const Home = () =>{
 
             <ul className="flex text-white">
                 <li className="ml-[249px] mb-[100px] text-lg font-semibold">
-                    <h3>Operational efficiency</h3>
+                    <h3>Operational Efficiency</h3>
                 </li>
                 <li className="ml-[249px] mb-[100px] text-lg font-semibold">
-                    <h3>Real-time monitoring</h3>
+                    <h3>Real-Time Monitoring</h3>
                 </li>
                 <li className="ml-[249px] mb-[100px] text-lg font-semibold">
-                    <h3>Improved productivity</h3>
+                    <h3>Improved Productivity</h3>
                 </li>
             </ul>
 
             <div name="Contact" className="w-full h-screen relative -z-10 ">
                 <img src={Bgfour} alt="/" className="h-screen object-cover w-full"/>
                 <h1 className="text-3xl text-white font-thin absolute top-[120px] left-[75px] text-center uppercase">Contact Us</h1>
-                <p className="absolute top-[170px] left-[75px] text-lg text-white font-thin">Email: blahblah@gmail.com</p>
+                <p className="absolute top-[170px] left-[75px] text-lg text-white font-thin">Email: adnokiia@gmail.com</p>
                 <p className="absolute top-[200px] left-[75px] text-lg text-white font-thin">Phone: +91 3888888811</p>
                 <button className="uppercase text-white absolute top-[250px] left-[80px] bg-gray-700 bg-opacity-20 px-12 py-2 text-xs border-2 hover:bg-opacity-100 transition ease-in-out delay-150 hover:-scale-y+1 hover:scale-110 ">Know more</button>
             </div>

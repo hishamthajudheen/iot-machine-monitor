@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import GaugeChart from 'react-gauge-chart';
 
-const Dashboard = () => {
+const Gauge = () => {
   const [gaugeValue, setGaugeValue] = useState(0.75);
   const [scrolling, setScrolling] = useState(false);
   const scrollTimeoutRef = useRef(null);
   const gaugeColor = ["#9C27B0"];
-  const [isGaugeVisible, setIsGaugeVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,23 +30,18 @@ const Dashboard = () => {
       clearInterval(interval);
       clearTimeout(scrollTimeoutRef.current);
     };
-  }, [scrolling, isGaugeVisible]);
+  }, [scrolling]);
 
-  const handleClick = () => {
-    setIsGaugeVisible(true);
-  };
 
   return (
     <div>
       <h1 className="text-white text-2xl flex mb-10 ml-[250px] mt-10">Machine 1</h1>
       <button onClick={handleClick}>Show Gauge</button>
-      {isGaugeVisible && (
         <div style={{ width: '400px', height: '500px' }}>
           <GaugeChart id="gauge-chart1" nrOfLevels={1} percent={gaugeValue} arcWidth={0.1} colors={gaugeColor} />
         </div>
-      )}
     </div>
   );
 }
 
-export default Dashboard;
+export default Gauge;

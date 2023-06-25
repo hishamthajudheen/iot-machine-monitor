@@ -20,9 +20,7 @@ const Profnav = () =>{
             </Link>
             </li>
             <li className='px-6 py-2.5 transition ease-in-out delay-150 hover:-scale-y+1 hover:scale-110 hover:text-purple-500  hover:decoration-[#C8A2C8] duration-300 rounded ml-12'>
-            <Link to="contact" smooth={true} duration={500}>
-              Dashboard
-            </Link>
+            <a href="/dashboard">Dashboard</a>
             </li>
           </ul>
           <ul className='flex items-center fixed right-[130px] hover:cursor-pointer'>

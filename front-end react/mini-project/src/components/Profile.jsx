@@ -36,13 +36,16 @@ const Profile = () => {
       <h1 className="text-white text-4xl flex justify-center mt-10">Your Account</h1>
       <hr className="border-4 mt-6 w-[200px] ml-[670px] border-purple-500"></hr>
       <div>
-        <h1 className="text-white mt-8 flex justify-center text-xl">Details</h1>
-        <p className="text-white flex justify-center -ml-10 mt-10">E-mail : </p>
-        <p className="text-white flex justify-center -ml-10 mt-1">Username : </p>
-        <button className="uppercase text-white mt-10 ml-[680px] bg-gray-700 bg-opacity-20 px-12 py-2 text-xs border-2 hover:bg-opacity-100 hover:bg-purple-700 hover:font-semibold hover:text-black transition ease-in-out delay-150 hover:-scale-y+1 hover:scale-110">Go To Dashboard</button>
-        <div style={{ width: '800px', height: '800px' }}>
-          <GaugeChart id="gauge-chart1" nrOfLevels={1} percent={gaugeValue} arcWidth={0.1} />
+        <div className="border-2 p-2  mr-[990px] ml-[400px] mt-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+        </svg>
         </div>
+        <h1 className="text-white -mt-[150px] flex justify-center text-xl">Details</h1>
+        <p className="text-white flex justify-center mt-10">E-mail : hishamthajudheen@gmail.com</p>
+        <p className="text-white flex justify-center mt-1">Username : Hisham Thajudheen</p>
+        <button className="uppercase text-white mt-10 ml-[680px] bg-gray-700 bg-opacity-20 px-12 py-2 text-xs border-2 hover:bg-opacity-100 hover:bg-purple-700 hover:font-semibold hover:text-black transition ease-in-out delay-150 hover:-scale-y+1 hover:scale-110"><a href="/dashboard">Go To Dashboard</a></button>
       </div>
     </div>
   );
