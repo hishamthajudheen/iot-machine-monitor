@@ -1,36 +1,19 @@
 import React from "react";
-import { DragDropContext, Draggable } from "react-beautiful-dnd";
 
-const Trial = () => {
-  const handleDragEnd = (result) => {
-    // Check if the item was dropped in a valid destination
-    if (!result.destination) return;
-
-    // Rearrange the items based on the drag and drop result
-    // Update your logic here to handle the new position of the div
-    const divPosition = {
-      x: result.destination.x,
-      y: result.destination.y,
-    };
-    console.log(divPosition);
+const MyComponent = () => {
+  const handleLinkClick = () => {
+    window.location.href = "C:/Users/DELL/Mini Project/iot-machine-monitor/front-end react/mini-project/public/.html";
   };
 
   return (
-    <DragDropContext onDragEnd={handleDragEnd}>
-      <Draggable draggableId="div" index={0}>
-        {(provided) => (
-          <div
-            {...provided.draggableProps}
-            {...provided.dragHandleProps}
-            ref={provided.innerRef}
-            className="drag-item"
-          >
-            Drag me!
-          </div>
-        )}
-      </Draggable>
-    </DragDropContext>
+    <div>
+      <head>
+        <title>NImbus io</title>
+      </head>
+      <h1>My React Component</h1>
+      <button onClick={handleLinkClick}>Go to External HTML Page</button>
+    </div>
   );
 };
 
-export default Trial;
+export default MyComponent;

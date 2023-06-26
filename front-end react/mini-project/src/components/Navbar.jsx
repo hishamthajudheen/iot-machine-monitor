@@ -27,10 +27,10 @@ const Navbar = () =>{
       </ul>
       <ul className='flex items-center fixed right-[130px] hover:cursor-pointer'>
         <li className='px-6 py-2.5 transition ease-in-out delay-150 hover:-scale-y+1 hover:scale-110 hover:text-purple-500  hover:decoration-[#C8A2C8] duration-300 rounded'>
-          <a href="/register">Register</a>
+          <a href="http://127.0.0.1:8000/members/register_user">Register</a>
         </li>
         <li className='pr-8 pl-6 py-2.5 transition ease-in-out delay-150 hover:-scale-y+1 hover:scale-110 hover:text-purple-500  hover:decoration-[#C8A2C8] duration-300 rounded ml-12'>
-            <a href="/login">Login</a>
+            <a href="http://127.0.0.1:8000/members/login_user">Login</a>
         </li>
       </ul>
     </div>
