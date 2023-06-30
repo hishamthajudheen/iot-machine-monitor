@@ -17,7 +17,7 @@ def login_user(request):
             messages.success(request,("Logged in!"))
             return redirect('login')
         else:
-            messages.success(request, "Invalid info")
+            messages.success(request, "Invalid Credentials!")
             return redirect('login')
             
     else:    
