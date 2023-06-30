@@ -1,9 +1,7 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <link href="login_style.css" type="text/css" rel="stylesheet">
-
 <form action="" method=POST>
    {% csrf_token %}
-   <div class="container hidden">
+   <div class="container">
       {% if messages %}
          <ul class="messages">
             {% for message in messages %}
