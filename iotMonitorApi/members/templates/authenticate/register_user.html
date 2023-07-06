@@ -7,8 +7,12 @@
 
 
 <title>Sign Up</title>
+<br/>
+<div class="container">
 <h2>User Registration</h2>
-<a href="{% url 'login' %}">Back to Login</a>
+</div>
+<hr>
+
 {% if form.errors %}
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
         Error with form!
@@ -22,5 +26,5 @@
         {{ form.as_p }}
         <br/>
         <button type="submit" class="btn btn-primary">Register</button>
-    </form>
+        <a class="btn btn-secondary" href="{% url 'login' %}">Discard</a>
 </div>

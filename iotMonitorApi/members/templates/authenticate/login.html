@@ -8,30 +8,34 @@
 <form action="" method=POST>
    {% csrf_token %}
 
-   <div class="container hidden">
+   <div class="container">
       {% if messages %}
          <ul class="messages">
             {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
             {% endfor %}
          </ul>
       {% endif %}
    </div>
-
+   <div class="container">
+      <br/>
+      <h1>User Signin <h1>
+      <hr>
+   </div>
    <div class="container">
       {% if user.is_authenticated %}
-         <p>Logged in as {{ user }}</p>
+         <p>Logged in as <strong>{{ user }}</p></strong>
       {% else %}
-         <a href="{% url 'register_user' %}">Not registered yet?</a>
+         
       <br></br>
       {% endif %}
    </div>
 
    {% if user.is_authenticated %}
    <div class="container">
-      <p>{% lorem 1 b random %}</p>
+      <p>{% lorem 5 b random %}</p>
+      <a class="btn btn-danger" href="{% url 'logout' %}">Log Out</a>
    </div>
-   <a href="{% url 'logout' %}">Log Out</a>
 
    {% else %}
       <div class="container">
@@ -47,7 +51,8 @@
             </div>
          </div>
          </br>
-         <button type="submit" class="btn btn-primary">Submit</button>
+         <button type="submit" class="btn btn-primary">Login</button>
+         <a class="btn btn-secondary" href="{% url 'register_user' %}">Not registered yet?</a>
       </div> 
    {% endif %}
 
