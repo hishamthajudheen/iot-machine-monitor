@@ -8,10 +8,11 @@
 
 <title>Sign Up</title>
 <br/>
-<div class="container">
-<h2>User Registration</h2>
+<div class="container" span>
+    <h2>User Registration</h2>
+    <hr>
 </div>
-<hr>
+
 
 {% if form.errors %}
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -27,4 +28,5 @@
         <br/>
         <button type="submit" class="btn btn-primary">Register</button>
         <a class="btn btn-secondary" href="{% url 'login' %}">Discard</a>
+        <p class="mt-5 mb-3 text-body-secondary"> IOT Machine Monitor™ </p> 
 </div>
