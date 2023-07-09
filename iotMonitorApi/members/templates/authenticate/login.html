@@ -1,39 +1,56 @@
 <link href="login_style.css" type="text/css" rel="stylesheet">
 <form action="" method=POST>
    {% csrf_token %}
+<<<<<<< HEAD
+=======
+
+>>>>>>> b8b1c642c8c88a919dea9b944b13a40e66976e8f
    <div class="container">
       {% if messages %}
          <ul class="messages">
             {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
             {% endfor %}
          </ul>
       {% endif %}
    </div>
-
-   <div>
+   <div class="container">
+      <br/>
+      <h1>User Signin <h1>
+      <hr>
+   </div>
+   <div class="container">
       {% if user.is_authenticated %}
-         <p>Logged in as {{ user }}</p>
+         <p>Logged in as <strong>{{ user }}</p></strong>
       {% else %}
-         <a href="{% url 'register_user' %}">Register</a>
+         
       <br></br>
       {% endif %}
    </div>
 
    {% if user.is_authenticated %}
-   <div class="form-group">
-      <h2>{% lorem 1 b random %}</h2>
-      <a href="{% url 'logout' %}">Log Out</a>
-   {% else %}
-   <label for="username">Enter Username</label>
-   <input type="text" class="form-control" name="username" placeholder="Enter username">
-</div>
+   <div class="container">
+      <p>{% lorem 5 b random %}</p>
+      <a class="btn btn-danger" href="{% url 'logout' %}">Log Out</a>
+   </div>
 
-<div class="form-group">
-  <label for="exampleInputPassword1">Password</label>
-  <input type="password" class="form-control" name="password" placeholder="Password">
-</div>
-<button type="submit" class="btn btn-primary">Submit</button>
+   {% else %}
+      <div class="container">
+         <div class="form-floating">
+            <input type="text" class="form-control" name="username" placeholder="Username">
+            <label for="username">Username</label>
+         </div>
+         </br>
+         <div class="form-group">
+            <div class="form-floating">
+               <input type="password" class="form-control" name="password" placeholder="Password">
+               <label for="password">Password</label>
+            </div>
+         </div>
+         </br>
+         <button type="submit" class="btn btn-primary">Login</button>
+         <a class="btn btn-secondary" href="{% url 'register_user' %}">Not registered yet?</a>
+      </div> 
    {% endif %}
 
- </form>
+</form>

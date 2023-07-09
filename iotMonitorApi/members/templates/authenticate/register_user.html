@@ -10,17 +10,24 @@
 
 >>>>>>> 9df924717828e49448bb74b365e76ec4bc191f98
 <title>Sign Up</title>
+<br/>
+<div class="container">
 <h2>User Registration</h2>
-<a href="{% url 'login' %}">Back to Login</a>
+</div>
+<hr>
+
 {% if form.errors %}
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
         Error with form!
     </div>
 {% endif %}
+
 <br/>
-<form action="{% url 'register_user' %}" method=POST>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <br/>
-    <button type="submit" class="btn btn-primary">Register</button>
-</form>
+<div class="container">
+    <form action="{% url 'register_user' %}" method=POST>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br/>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <a class="btn btn-secondary" href="{% url 'login' %}">Discard</a>
+</div>
