@@ -5,7 +5,7 @@ import Bgfour from '../assets/Bgfour.jpg';
 const Home = () =>{
     return(
         <div>
-            <div name="Home" className="h-screen">
+            <div name="Home" class="h-screen">
             <video autoPlay loop muted className="h-screen w-full object-cover relative ">
                 <source src={bgv1} type="video/mp4" />
             </video>
@@ -18,15 +18,17 @@ const Home = () =>{
                  <div className="pt-[80px] flex justify-center">
                     <h1 className="text-white font-semibold text-5xl ">About Us</h1>
                  </div>
-                 <hr className="w-[200px] mt-[40px] ml-[660px] border-4 border-purple-500 cursor-pointer hover:border-purple-800 duration-500"></hr>
-                 <div className="mt-[60px] w-[600px] ml-[475px]">
+                 <div className="flex justify-center">
+                 <hr className=" flex justify-center w-[200px] mt-[40px] border-4 border-purple-500 cursor-pointer hover:border-purple-800 duration-500"></hr>
+                 </div>
+                 <div className="mt-[60px] xl:w-[600px] xl:ml-[475px] flex-shrink mb-10">
                  <p className="text-white text-center">IoT Machine Monitoring Systems Ltd. is a leading provider of advanced machine monitoring solutions for industrial and manufacturing environments. Our innovative solutions harness the power of IoT technology to collect, analyze, and visualize real-time data from machines, enabling businesses to optimize performance, increase productivity, and reduce downtime. With our customizable dashboards, intelligent analytics, and commitment to customer satisfaction, we empower our clients to make informed decisions and achieve operational excellence.</p>
                  </div>
             </div>
             
-            <ul className="flex">
+            <ul className="hidden lg:flex justify-center">
                 <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16" className="text-purple-500 ml-[285px] mt-[95px] animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16" className="text-purple-500 mt-[95px] animate-bounce">
                 <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z"/>
                 </svg>
                 </li>
@@ -43,8 +45,8 @@ const Home = () =>{
                 </li>
             </ul>
 
-            <ul className="flex text-white">
-                <li className="ml-[249px] mb-[100px] text-lg font-semibold">
+            <ul className="hidden lg:flex justify-center text-white">
+                <li className="mb-[100px] text-lg font-semibold">
                     <h3>Operational Efficiency</h3>
                 </li>
                 <li className="ml-[249px] mb-[100px] text-lg font-semibold">
