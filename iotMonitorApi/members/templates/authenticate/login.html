@@ -14,14 +14,16 @@
    <div>
       {% if user.is_authenticated %}
          <p>Logged in as {{ user }}</p>
-         <a href="{% url 'logout' %}">Log Out</a>
       {% else %}
          <a href="{% url 'register_user' %}">Register</a>
+      <br></br>
       {% endif %}
    </div>
+
    {% if user.is_authenticated %}
    <div class="form-group">
-      <h2>You are Logged in as {{ user }}</h2>
+      <h2>{% lorem 1 b random %}</h2>
+      <a href="{% url 'logout' %}">Log Out</a>
    {% else %}
    <label for="username">Enter Username</label>
    <input type="text" class="form-control" name="username" placeholder="Enter username">

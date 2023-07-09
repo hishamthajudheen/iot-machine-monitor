@@ -5,7 +5,7 @@ import Bgfour from '../assets/Bgfour.jpg';
 const Home = () =>{
     return(
         <div>
-            <div name="Home" className="h-screen">
+            <div name="Home" class="h-screen">
             <video autoPlay loop muted className="h-screen w-full object-cover relative ">
                 <source src={bgv1} type="video/mp4" />
             </video>
