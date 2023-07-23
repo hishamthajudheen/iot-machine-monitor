@@ -216,6 +216,10 @@ def delete(id, db: Session = Depends(get_db)):
 def dashboard(request: Request):  #db:Session = Depends(get_db), current_user: User = Depends(get_current_user)
     return templates.TemplateResponse("dashboard.html", {"request": request})
 
+@app.get("/about")
+def about(request: Request):
+    return templates.TemplateResponse("about.html", {"request": request})
+
 
 
 if __name__ == "__main__":
