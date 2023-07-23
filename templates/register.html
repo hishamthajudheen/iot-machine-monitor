@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body class="d-flex align-items-center py-4 bg-body-tertiary">
+       
+
+        
+    <main class="form-signin w-100 m-auto">
+    <div class="container">
+        <form id="signupForm">
+            <img class="mb-4" src="../static/logo4.png" alt="logo here" width="72" height="60">
+            <h1 class="h3 mb-3 fw-normal">User Registration</h1>
+    
+            <div class="form-floating">
+            <input type="text" class="form-control" id="username" placeholder="Your username here">
+            <label for="username">Enter a Username</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="email" class="form-control" id="email" placeholder="email">
+              <label for="email">Enter Email</label>
+              </div>
+
+            <div class="form-floating">
+            <input type="password" class="form-control" id="password" placeholder="Password">
+            <label for="password">Enter Password</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="confirmpassword" placeholder="Password">
+                <label for="confirmpassword">Confirm Password</label>
+                </div>
+            <br/>
+            <button class="btn btn-primary" type="submit">Register</button>
+            <a class="btn btn-danger" href="/"> Discard </a>
+            <p class="mt-5 mb-3 text-body-secondary">&copy; IOT Machine Monitor</p>
+        </form>
+    </div>
+    
+    </main>
+
+    <script>
+      // Function to handle form submission
+      async function submitForm(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Get form input values
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmpassword').value;
+    
+        // Checking if any fields are empty
+        if (email === '' || username === '' || password === '' || confirmPassword === '') {
+          alert('All fields are necessary');
+          return;
+        }
+    
+        // Check if passwords match
+        if (password !== confirmPassword) {
+          alert('Passwords do not match');
+          return;
+        }
+    
+        // Create the user object
+        const user = { username, email, password };
+    
+        try {
+          const response = await fetch('/register', { // Update the endpoint URL to match your API endpoint
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+          });
+    
+          if (!response.ok) {
+            throw new Error('Error creating user');
+          }
+    
+          alert('User created successfully');
+          window.location.href = "/login"; // Redirect to the appropriate page after successful registration
+        } catch (error) {
+          console.error(error);
+          alert('An error occurred while creating the user');
+        }
+      }
+    
+      // Attach the submitForm function to the form's submit event
+      const form = document.getElementById('signupForm');
+      form.addEventListener('submit', submitForm);
+
+    </script>
+    
+    
+  </body>
+</html>

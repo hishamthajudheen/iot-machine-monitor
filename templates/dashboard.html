@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Chart</title>
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/gauge.min.js"></script>
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+
+</head>
+<body>
+
+    <script src="/static/script.js"></script>
+    <table>
+        <tr>
+            <td>
+                <h1>Dashboard</h1>
+                <div id="chart-container">
+                    <canvas id="chart" width="800px" height="500px"></canvas>
+                </div>
+            </td>
+            <td>
+                <div id="thermometer-container">
+                </div>
+            </td>
+            <td>
+
+                <div id="gaugecontainer3">
+                    <div id="gauge2" class="gauge-container"></div>
+                    <p id="caption3">GAUGE 3</p>
+                </div>
+
+                    <div id="gaugecontainer1">
+                        <div id="gauge1" class="gauge-container"></div>
+                        <p id="caption2">GAUGE 1</p>
+                    </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="count-box">
+                    <div class="container">
+                        <span>Count of Movements:</span>
+                        <h2 id="counting"></h2>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div id="gaugecontainer2">
+                    <div id="gauge0" class="gauge-container"></div>
+                    <p id="caption1">GAUGE 2</p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="toggle-container">
+                    <div class="switch-wrapper">
+                        <label class="switch">
+                            <span class="switch-label">Switch 1</span>
+                            <input class="chk" type="checkbox" id="switch1" onchange="sendToggleState()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="switch-wrapper">
+                        <label class="switch">
+                            <span class="switch-label">Switch 2</span>
+                            <input class="chk" type="checkbox" id="switch2" onchange="sendToggleState()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </td>
+        <td>
+            <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="50" class="range" id="myRange">
+              </div>
+
+        </td>
+        </tr>
+    </table>
+</body>
+</html>

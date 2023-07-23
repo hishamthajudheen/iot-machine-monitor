@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body class="d-flex align-items-center py-4 bg-body-tertiary">      
+
+        
+    <main class="form-signin w-100 m-auto">
+    <div class="container">
+        <form id="loginForm">
+            <img class="mb-4" src="static/logo4.png" alt="logo here" width="72" height="60">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    
+            <div class="form-floating">
+            <input type="text" class="form-control" id="username" placeholder="Your username here">
+            <label for="username">Username</label>
+            </div>
+            <div class="form-floating">
+            <input type="password" class="form-control" id="password" placeholder="Password">
+            <label for="password">Password</label>
+            </div>
+            <br/>
+            <button class="btn btn-primary" type="submit">Sign in</button>
+            <a class="btn btn-danger" href="/"> Discard </a>
+            <p class="mt-5 mb-3 text-body-secondary">&copy; IOT Machine Monitor</p>
+        </form>
+    </div>
+    
+    </main>
+
+    <script>
+      // Function to handle form submission
+      async function submitForm(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Get form input values
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+    
+        // Create the form data object
+        const formData = new URLSearchParams();
+        formData.append('grant_type', 'password');
+        formData.append('username', username);
+        formData.append('password', password);
+    
+        try {
+          const response = await fetch('/login', { // Update the endpoint URL to match your API endpoint
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData.toString(),
+          });
+    
+          if (!response.ok) {
+            throw new Error('Error validating user');
+          }
+    
+          alert('User validated successfully');
+          window.location.href = "/dashboard"; // Redirect to the appropriate page after successful login
+        } catch (error) {
+          console.error(error);
+          alert('An error occurred while signing in');
+        }
+      }
+    
+      // Attach the submitForm function to the form's submit event
+      const form = document.getElementById('loginForm');
+      form.addEventListener('submit', submitForm);
+    </script>
+    
+    
+    
+    
+
+  </body>
+</html>

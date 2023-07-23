@@ -1,0 +1,295 @@
+h1 {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 50px;
+  margin-top: -40px;
+}
+
+.toggle-container {
+  margin-top: -200px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.switch-wrapper {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.switch-label {
+  font-weight: bold;
+  margin-top: 75px;
+  color: aliceblue;
+}
+
+.switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 34px;
+}
+
+.chk {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "OFF";
+  display: grid;
+  place-items: center;
+  height: 1.6em;
+  width: 3.4em;
+  border-radius: 20px;
+  left: 0.17em;
+  bottom: 0.22em;
+  background-color: rgb(255, 0, 0);
+  box-shadow: 0px 0px 3.7px black;
+  transition: .4s ease-in-out;
+}
+
+.chk:checked + .slider:before {
+  content: "ON";
+  background-color: limegreen;
+  box-shadow: inset 0px 0px 5px black;
+}
+
+#chart {
+  background-color: #000000;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-color: blue;
+}
+
+.count-box {
+  padding: 10px;
+  padding-top: 0px;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  display: inline-block;
+}
+
+.count-box span {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-family: Arial, sans-serif;
+}
+
+#counting {
+  color: rgb(0, 0, 0);
+  margin-left: 20px;
+  margin-top: -12px;
+  margin-bottom: 190px;
+  background-color: rgb(114, 128, 128);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#gauge0 {
+  height: 20px;
+  width: 200px;
+  color: aliceblue;
+}
+
+#gauge1 {
+  height: 20px;
+  width: 200px;
+  color: aliceblue;
+}
+
+#gauge2 {
+  height: 20px;
+  width: 200px;
+  color: aliceblue;
+}
+
+#gauge1 > .gauge .value{
+  stroke: rgb(89, 255, 0);
+}
+#gauge2 > .gauge .value{
+  stroke: rgb(0, 47, 255);
+}
+
+.gaugecontainer1 {
+  width: 250px;
+  height: 250px;
+  display: block;
+  padding: 20px;
+}
+
+.gaugecontainer1 > .gauge .dial {
+  stroke: #eee;
+  stroke-width: 2;
+  fill: rgba(0, 0, 0, 0);
+}
+
+.gaugecontainer1 > .gauge .value {
+  stroke: rgb(255, 0, 0);
+  stroke-width: 2;
+  fill: rgba(240, 231, 231, 0);
+}
+
+.gaugecontainer1 > .gauge .value-text {
+  fill: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+.gaugecontainer2 {
+  width: 250px;
+  height: 250px;
+  display: block;
+  padding: 20px;
+}
+
+.gaugecontainer2 > .gauge .dial {
+  stroke: #eee;
+  stroke-width: 2;
+  fill: rgba(0, 0, 0, 0);
+}
+
+.gaugecontainer2 > .gauge .value {
+  stroke: rgb(255, 0, 0);
+  stroke-width: 2;
+  fill: rgba(240, 231, 231, 0);
+}
+
+.gaugecontainer2 > .gauge .value-text {
+  fill: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.gaugecontainer3 {
+  width: 250px;
+  height: 250px;
+  display: block;
+  padding: 20px;
+}
+
+.gaugecontainer3 > .gauge .dial {
+  stroke: #eee;
+  stroke-width: 2;
+  fill: rgba(0, 0, 0, 0);
+}
+
+.gaugecontainer3 > .gauge .value {
+  stroke: rgb(255, 0, 0);
+  stroke-width: 2;
+  fill: rgba(240, 231, 231, 0);
+}
+
+.gaugecontainer3 > .gauge .value-text {
+  fill: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+
+
+.container {
+  display: flex;
+}
+
+#caption2 {
+  color: rgb(255, 255, 255);
+  margin-top: 125px;
+  margin-left: 70px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+#caption3 {
+  color: rgb(255, 255, 255);
+  margin-top: 125px;
+  margin-left: 70px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+#caption1 {
+  color: rgb(255, 255, 255);
+  margin-top: 125px;
+  margin-left: 70px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+#chart-container {
+  width: fit-content;
+}
+
+#thermometer-container td {
+  float: right;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 30px;
+}
+
+.slidecontainer {
+  width: 100%; 
+  margin-left: -450px;
+  margin-top: -190px;
+}
+
+/* The slider itself */
+.range {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #ffffff; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.range:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.range::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}

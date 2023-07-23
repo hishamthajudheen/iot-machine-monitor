@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="{{ url_for('static', path='/index.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div>
+        <div class="header">
+           <table>
+            <tr>
+                <td>
+                    <div id="logo">
+                    </div>
+                </td>
+                <td>
+                    <div id="dev">
+                      <a href="login.html">Devices</a>  
+                    </div>
+                </td>
+                <td>
+                    <div id="dash">
+                        <a href="dashboard">Dashboard</a> 
+                    </div>
+                </td>
+                <td>
+                    <div id="about">
+                        <a href="login">About</a>
+                    </div>
+                </td>
+                <td>
+                    <div id="memb">
+                        <a href="login.html">Members</a>
+                    </div>
+                </td>
+                <td>
+                    <div id="login">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <a href="login">Login</a>
+                
+                    </div>
+                </td>
+                
+            </tr>
+           </table>
+
+        </div>
+            <div class="myVideo">
+            <video autoplay muted loop id="myVideo">
+                <source src="{{ url_for('static', path='bgvid.mp4') }}" type="video/mp4">
+            </video>
+            
+            </div> 
+    </div>
+</body>

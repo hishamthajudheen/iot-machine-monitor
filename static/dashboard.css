@@ -1,0 +1,119 @@
+h1{
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 50px;
+}
+.toggle-container {
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.switch-wrapper {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.switch-label {
+    font-weight: bold;
+    margin-top:75px;
+    color: aliceblue;
+}
+
+.switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 34px;
+}
+
+.chk {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "OFF";
+    display: grid;
+    place-items: center;
+    height: 1.6em;
+    width: 3.6em;
+    border-radius: 20px;
+    left: 0.17em;
+    bottom: 0.22em;
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 3.7px black;
+    transition: .4s ease-in-out;
+}
+
+.chk:checked + .slider:before {
+    content: "ON";
+    background-color: limegreen;
+    box-shadow: inset 0px 0px 5px black;
+}
+#chart {
+    background-color: #000000;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-color: blue;
+  }
+  .count-box {
+    padding: 10px;
+    margin-top: 1px;
+    text-align: center;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.count-box span {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+#movement-count {
+    background-color: rgb(255, 255, 255);
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+ body{
+    background-color: #000000;
+}
+
+#counting {
+    color: rgb(0, 0, 0);
+    margin-left: 20px;
+    margin-top: -12px;
+    background-color: rgb(114, 128, 128);
+    padding: 10px; /* Add padding for better visual appearance */
+    border-radius: 5px; /* Add rounded corners to the box */
+    font-size: 24px; /* Adjust the font size as desired */
+    font-weight: bold; /* Make the text bold */
+}
+
+
+.container{
+    display: flex;
+}
+
+
+
+
