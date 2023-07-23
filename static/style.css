@@ -237,7 +237,7 @@ h1 {
 }
 
 body {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
 
 #chart-container {
@@ -293,3 +293,34 @@ table {
   background: #04AA6D; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
+
+/* Style the signout button */
+#signout {
+  background-color: red;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  margin-top: -10px;
+  margin-left: 10px;
+}
+
+/* Style the link inside the signout button */
+#signout a {
+  text-decoration: none;
+  color: aliceblue;
+  font-weight: bold;
+}
+
+/* Change link color on hover */
+#signout a:hover {
+  color: white;
+}
+
+/* Change button background color on hover */
+#signout:hover {
+  background-color: darkred;
+}
+
