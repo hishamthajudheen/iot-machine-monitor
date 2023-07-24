@@ -83,8 +83,31 @@
         </td>
         </tr>
     </table>
-        <button id="signout">
-        <a href="/">Signout</a>
-        </button>
+
+
+    <button id="signout">
+        Signout
+    </button>
+
+    <script>
+        document.getElementById('signout').onclick = function () {
+            fetch('/logout', {
+                method: 'POST',
+                credentials: 'include'
+            })
+            .then((response) => {
+                if (response.ok) {
+                    alert('You were logged out!');
+                    window.location.href = '/';
+                } else {
+                    console.error('Logout failed');
+                }
+            })
+            .catch((error) => {
+                console.error('Logout error:', error);
+            });
+        };
+    </script>
+
 </body>
 </html>

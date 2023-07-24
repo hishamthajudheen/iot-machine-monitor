@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from jose import jwt, JWTError
 
 from fastapi import APIRouter, FastAPI, Request, HTTPException,Depends, status
+from starlette.responses import Response
 from starlette.websockets import WebSocket, WebSocketDisconnect
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -40,7 +41,6 @@ SECRET_KEY = "e217c0da1d627ce49001186d17635a21f845345130570ef36e5ececa806e23a157
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 5
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")  #The password hashing and JWT Token generation stuff
 
 
 router = APIRouter()
@@ -52,12 +52,18 @@ def generate_token(data: dict):  #jwt_token genetor
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
-def get_current_user(token:str = Depends(oauth2_scheme)): #returns current user and their token
+def get_current_user(request: Request): #returns current user and their token
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Invalid credentials",
         headers={'WWW-Authenticate':"Bearer"},
     )
+
+    token = request.cookies.get("access_token")
+
+    if token is None:
+        print("Null token")
+
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username:str = payload.get('sub')
@@ -156,8 +162,8 @@ async def index(request: Request):
 async def login(request: Request):
     return templates.TemplateResponse("login.html", {"request": request})
 
-@app.post('/login')
-def login(request: OAuth2PasswordRequestForm = Depends(), db:Session=Depends(get_db)):
+@app.post('/login', tags=["authentication"])
+def login(response: Response, request: OAuth2PasswordRequestForm = Depends(), db:Session=Depends(get_db)):
     user = db.query(models.User).filter(models.User.username == request.username).first()
     if not user:
         raise HTTPException(
@@ -172,7 +178,18 @@ def login(request: OAuth2PasswordRequestForm = Depends(), db:Session=Depends(get
     access_token = generate_token(
         data={"sub":user.username}
     )
+
+    response.set_cookie(key='access_token', value=access_token, httponly=True)
+
     return {"access_token":access_token, "token_type":"bearer"}
+
+@app.post("/logout", tags=["authentication"])
+def logout(response: Response, current_user: TokenData = Depends(get_current_user)):
+    response.delete_cookie("access_token")
+    return {"message":"Logout successful"}
+
+
+
 
 @app.get("/register") #for the register button in index page
 async def register(request: Request):
@@ -213,8 +230,11 @@ def delete(id, db: Session = Depends(get_db)):
     return {'user deleted!'}
 
 @app.get("/dashboard")
-def dashboard(request: Request):  #db:Session = Depends(get_db), current_user: User = Depends(get_current_user)
+def dashboard(request: Request, db:Session = Depends(get_db), current_user: User = Depends(get_current_user)):  #
     return templates.TemplateResponse("dashboard.html", {"request": request})
+
+
+
 
 @app.get("/about")
 def about(request: Request):
@@ -222,7 +242,7 @@ def about(request: Request):
 
 
 
-if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+# if __name__ == "__main__":
+#     import uvicorn
+#
+#     uvicorn.run("app", host="0.0.0.0", port=8000, reload=True)
