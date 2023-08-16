@@ -13,7 +13,7 @@ This repository contains an IoT machine monitoring system built using FastAPI. T
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/iot-machine-monitoring.git
+   git clone https://github.com/hishamthajudheen/iot-machine-monitoring.git
    ```
 
 2. Navigate to the project directory:
@@ -38,7 +38,11 @@ This repository contains an IoT machine monitoring system built using FastAPI. T
 
 2. Open your web browser and access the dashboard by visiting `http://localhost:8000`.
 
-3. Use the switches on the dashboard to remotely control connected devices or sensors.
+3. Create a new user account using the register tab and signin.
+
+4. The real-time sensor data will be shown in graphs and various gauges.
+
+5. Use the switches on the dashboard to remotely control connected devices or sensors.
 
 ## Configuration
 
