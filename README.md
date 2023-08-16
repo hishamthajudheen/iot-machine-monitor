@@ -1,4 +1,4 @@
-# IoT Machine Monitoring System with FastAPI
+# IoT Based Industrial Machine Monitoring System
 
 This repository contains an IoT machine monitoring system built using FastAPI. The system establishes a WebSocket connection with a NodeMCU device to receive real-time sensor data and provides a dashboard with switches to control connected devices or sensors.
 
